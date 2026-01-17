@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #111;
+  background: #ffffff;
+}
+
+/* HEADER */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  text-decoration: none;
+  color: #111;
+}
+
+.logo img {
+  width: 48px;
+}
+
+.logo span {
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.main-nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.main-nav a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #222;
+}
+
+.btn-reserva {
+  background: #111827;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* HERO */
+.hero {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background: #111827;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* BLOCK 2 */
+.block-enfoques {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.libro {
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+}
+
+.libro img {
+  width: 100%;
+  max-width: 280px;
+}
+
+.enfoques h2 {
+  margin-bottom: 20px;
+}
+
+.enfoque {
+  border: 1px solid #e5e5e5;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+/* CONTACTO */
+.contacto {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.contacto iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  margin-top: 20px;
+}
+
+/* FOOTER */
+.site-footer {
+  border-top: 1px solid #e6e6e6;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+

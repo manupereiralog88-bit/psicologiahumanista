@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Centro de Salud Mental Ñuñoa | Ps. Mg. Ignacio Bravo</title>
+    <meta
+      name="description"
+      content="Psicoterapia Humanista, Gestalt y PNL en Ñuñoa. Atención individual y servicios para empresas con foco en salud mental y desarrollo humano."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+      :root {
+        --color-bg: #ffffff;
+        --color-surface: #f9fafb;
+        --color-border: #e5e7eb;
+        --color-text: #111827;
+        --color-text-muted: #4b5563;
+        --color-accent: #14532d;
+        --color-accent-soft: #ecfdf5;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        color: var(--color-text);
+        background: var(--color-bg);
+      }
+
+      a {
+        color: inherit;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Layout global */
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      /* HEADER */
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        padding: 0.7rem 0;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+      }
+
+      .brand-logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 999px;
+        object-fit: cover;
+      }
+
+      .brand-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .brand-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #111827;
+      }
+
+      .brand-subtitle {
+        font-size: 0.85rem;
+        color: #6b7280;
+      }
+
+      .main-nav {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        font-size: 0.95rem;
+      }
+
+      .main-nav a {
+        text-decoration: none;
+        color: #374151;
+        padding-bottom: 0.1rem;
+        border-bottom: 1px solid transparent;
+        transition:
+          color 0.15s ease,
+          border-color 0.15s ease;
+      }
+
+      .main-nav a:hover {
+        color: #111827;
+        border-color: var(--color-border);
+      }
+
+      .main-nav .nav-cta {
+        padding: 0.45rem 0.95rem;
+        border-radius: 999px;
+        border: 1px solid var(--color-accent);
+        background: var(--color-accent);
+        color: #ffffff;
+        font-weight: 500;
+        border-bottom: none;
+      }
+
+      .main-nav .nav-cta:hover {
+        background: #166534;
+        border-color: #166534;
+      }
+
+      /* HERO */
+
+      .hero {
+        padding: 2.8rem 0 2.4rem;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+        gap: 2.5rem;
+        align-items: center;
+      }
+
+      .hero-kicker {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: #6b7280;
+        margin-bottom: 0.6rem;
+      }
+
+      .hero-title {
+        font-size: 2.1rem;
+        line-height: 1.2;
+        margin: 0 0 0.7rem;
+      }
+
+      .hero-highlight {
+        color: var(--color-accent);
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+        color: var(--color-text-muted);
+        margin: 0 0 1.3rem;
+      }
+
+      .hero-meta {
+        font-size: 0.9rem;
+        color: #6b7280;
+        margin-bottom: 1.4rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.6rem 1.1rem;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        font-size: 0.95rem;
+        cursor: pointer;
+        text-decoration: none;
+        white-space: nowrap;
+        transition:
+          background-color 0.15s ease,
+          border-color 0.15s ease,
+          color 0.15s ease,
+          box-shadow 0.15s ease;
+      }
+
+      .btn-primary {
+        background: #0f172a;
+        border-color: #0f172a;
+        color: #ffffff;
+      }
+
+      .btn-primary:hover {
+        background: #020617;
+        border-color: #020617;
+        box-shadow: 0 14px 40px rgba(15, 23, 42, 0.4);
+      }
+
+      .btn-ghost {
+        border-color: var(--color-border);
+        background: #ffffff;
+        color: #111827;
+      }
+
+      .btn-ghost:hover {
+        background: #f3f4f6;
+      }
+
+      .hero-note {
+        font-size: 0.85rem;
+        color: #6b7280;
+      }
+
+      .hero-panel {
+        border-radius: 1.3rem;
+        border: 1px solid var(--color-border);
+        background: radial-gradient(circle at top left, #ecfdf5, #eff6ff);
+        padding: 1.3rem 1.1rem;
+        box-shadow: 0 20px 60px rgba(15, 23, 42, 0.25);
+      }
+
+      .hero-panel-title {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 0.6rem;
+      }
+
+      .hero-panel-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 0.8rem;
+        font-size: 0.9rem;
+        color: #374151;
+      }
+
+      .hero-panel-list li {
+        margin-bottom: 0.25rem;
+      }
+
+      .hero-panel-foot {
+        font-size: 0.8rem;
+        color: #6b7280;
+      }
+
+      /* SECCIONES GENERALES */
+
+      section {
+        padding: 2.8rem 0;
+      }
+
+      .section-header {
+        text-align: left;
+        margin-bottom: 1.8rem;
+      }
+
+      .section-kicker {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: #6b7280;
+        margin-bottom: 0.3rem;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+        margin: 0 0 0.4rem;
+      }
+
+      .section-subtitle {
+        font-size: 0.95rem;
+        color: #6b7280;
+        margin: 0;
+      }
+
+      /* ENFOQUES INTERACTIVOS */
+
+      .enfoques-wrapper {
+        background: var(--color-surface);
+        border-top: 1px solid var(--color-border);
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .enfoques-interactivos {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+        align-items: start;
+      }
+
+      .enfoques-lista {
+        max-width: 640px;
+      }
+
+      .enfoques-lista h2 {
+        font-size: 1.3rem;
+        margin-bottom: 0.85rem;
+      }
+
+      .enfoques-lista > p {
+        font-size: 0.95rem;
+        color: #4b5563;
+        margin-bottom: 1.1rem;
+      }
+
+      .enfoque-btn {
+        width: 100%;
+        text-align: left;
+        border: 1px solid #d1d5db;
+        border-radius: 0.9rem;
+        padding: 0.85rem 1rem;
+        margin-bottom: 0.75rem;
+        background: #ffffff;
+        cursor: pointer;
+        display: block;
+        transition:
+          border-color 0.2s ease,
+          box-shadow 0.2s ease,
+          background-color 0.2s ease,
+          transform 0.15s ease;
+      }
+
+      .enfoque-btn:hover {
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+        transform: translateY(-2px);
+      }
+
+      .enfoque-btn.active {
+        border-color: var(--color-accent);
+        background: var(--color-accent-soft);
+        box-shadow: 0 12px 35px rgba(20, 83, 45, 0.18);
+      }
+
+      .enfoque-titulo {
+        display: block;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--color-accent);
+        margin-bottom: 0.2rem;
+      }
+
+      .enfoque-descripcion {
+        display: block;
+        font-size: 0.9rem;
+        color: #4b5563;
+      }
+
+      .enfoques-visor {
+        width: 100%;
+      }
+
+      .enfoques-visor-inner {
+        border-radius: 1rem;
+        border: 1px solid var(--color-border);
+        padding: 0.75rem;
+        background: #f9fafb;
+        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.16);
+        min-height: 260px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .enfoques-nota {
+        margin-top: 0.75rem;
+        font-size: 0.85rem;
+        color: #6b7280;
+      }
+
+      /* PSICOTERAPIA INDIVIDUAL */
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+        gap: 2rem;
+        align-items: start;
+      }
+
+      .copy-block p {
+        font-size: 0.95rem;
+        color: #4b5563;
+        margin-bottom: 0.9rem;
+        line-height: 1.6;
+      }
+
+      .pill-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.4rem;
+      }
+
+      .pill {
+        font-size: 0.8rem;
+        padding: 0.35rem 0.75rem;
+        border-radius: 999px;
+        background: #ecfdf5;
+        color: #166534;
+        border: 1px solid #bbf7d0;
+      }
+
+      .card-soft {
+        border-radius: 1rem;
+        border: 1px solid var(--color-border);
+        background: #f9fafb;
+        padding: 1.1rem 1rem;
+        font-size: 0.9rem;
+        color: #4b5563;
+        box-shadow: 0 12px 32px rgba(15, 23, 42, 0.14);
+      }
+
+      .card-soft h3 {
+        margin-top: 0;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      /* EMPRESAS */
+
+      .empresas-list ul {
+        margin: 0.5rem 0 1.1rem 1.1rem;
+        padding: 0;
+        font-size: 0.9rem;
+        color: #4b5563;
+      }
+
+      .empresas-list li {
+        margin-bottom: 0.25rem;
+      }
+
+      /* CONTACTO */
+
+      .contacto {
+        background: #0f172a;
+        color: #e5e7eb;
+      }
+
+      .contacto .section-header {
+        text-align: center;
+      }
+
+      .contacto .section-subtitle {
+        color: #9ca3af;
+      }
+
+      .contact-grid {
+        max-width: 620px;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 0.95rem;
+      }
+
+      .contact-grid p {
+        margin-bottom: 0.7rem;
+      }
+
+      .contact-data {
+        margin-top: 0.8rem;
+        font-size: 0.95rem;
+      }
+
+      .contact-data strong {
+        color: #f9fafb;
+      }
+
+      /* FOOTER */
+
+      .site-footer {
+        border-top: 1px solid var(--color-border);
+        padding: 1.4rem 0;
+        background: #f9fafb;
+      }
+
+      .footer-inner {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        font-size: 0.9rem;
+        color: #6b7280;
+      }
+
+      .footer-inner p {
+        margin: 0.2rem 0;
+      }
+
+      /* RESPONSIVE */
+
+      @media (max-width: 900px) {
+        .hero-grid,
+        .enfoques-interactivos,
+        .grid-2 {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          padding-top: 2rem;
+        }
+      }
+
+      @media (max-width: 780px) {
+        .header-inner {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .main-nav {
+          flex-wrap: wrap;
+          justify-content: flex-start;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-title {
+          font-size: 1.7rem;
+        }
+
+        .site-header {
+          border-bottom-color: #e5e7eb;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container">
+        <div class="header-inner">
+          <a href="#inicio" class="brand">
+            <!-- Cambia la ruta del logo por tu archivo real -->
+            <img
+              src="/img/logo-psicoterapia-humanista.png"
+              alt="Centro de Salud Mental Ñuñoa"
+              class="brand-logo"
+            />
+            <span class="brand-text">
+              <span class="brand-title">Centro de Salud Mental Ñuñoa</span>
+              <span class="brand-subtitle">Ps. Mg. Ignacio Bravo</span>
+            </span>
+          </a>
+
+          <nav class="main-nav">
+            <a href="#inicio">Inicio</a>
+            <a href="#enfoques">Enfoques</a>
+            <a href="#psicoterapia">Psicoterapia individual</a>
+            <a href="#empresas">Empresas</a>
+            <a href="#contacto" class="nav-cta">Reserva tu sesión</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <main id="inicio">
+      <section class="hero">
+        <div class="container">
+          <div class="hero-grid">
+            <div>
+              <div class="hero-kicker">Psicoterapia en Ñuñoa</div>
+              <h1 class="hero-title">
+                Psicoterapia <span class="hero-highlight">Humanista, Gestalt</span>
+                y PNL
+              </h1>
+              <p class="hero-subtitle">
+                Un espacio terapéutico cálido y profesional para acompañarte en
+                momentos de crisis, cambio o búsqueda personal.
+              </p>
+              <p class="hero-meta">
+                Atención para personas adultas, jóvenes y adolescentes. Modalidad
+                presencial y remota.
+              </p>
+
+              <div class="hero-actions">
+                <a href="#contacto" class="btn btn-primary"
+                  >Reserva tu sesión ahora</a
+                >
+                <a href="#enfoques" class="btn btn-ghost"
+                  >Conoce mis enfoques de trabajo</a
+                >
+              </div>
+
+              <p class="hero-note">
+                Más de 15 años de experiencia clínica y trabajo con equipos en
+                infancia, adolescencia y contexto organizacional.
+              </p>
+            </div>
+
+            <aside class="hero-panel">
+              <div class="hero-panel-title">¿En qué puedo acompañarte?</div>
+              <ul class="hero-panel-list">
+                <li>Procesos de duelo, crisis vitales y cambios importantes.</li>
+                <li>Dificultades emocionales, ansiedad, tristeza y estrés.</li>
+                <li>Conflictos relacionales y de comunicación.</li>
+                <li>Búsqueda de sentido, identidad y proyecto de vida.</li>
+              </ul>
+              <div class="hero-panel-foot">
+                En sesiones, trabajamos desde tus tiempos, tu historia y tus
+                recursos, construyendo juntos el camino terapéutico que necesitas.
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- ENFOQUES + IMÁGENES -->
+      <section id="enfoques" class="enfoques-wrapper">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-kicker">Enfoques</div>
+            <h2 class="section-title">Cómo trabajo en psicoterapia</h2>
+            <p class="section-subtitle">
+              Integro enfoques Humanista, Gestalt y Programación Neurolingüística
+              (PNL), según las necesidades de cada proceso.
+            </p>
+          </div>
+
+          <div class="enfoques-interactivos">
+            <div class="enfoques-lista">
+              <h2>Nuestros enfoques</h2>
+              <p>
+                Cada enfoque aporta una mirada distinta sobre tu experiencia. En
+                conjunto, permiten un trabajo profundo, respetuoso y flexible.
+              </p>
+
+              <button class="enfoque-btn active" data-image="humanista">
+                <span class="enfoque-titulo">Psicoterapia Humanista</span>
+                <span class="enfoque-descripcion">
+                  Un espacio de acompañamiento centrado en tu experiencia presente,
+                  tu autonomía y tu capacidad de tomar decisiones propias.
+                </span>
+              </button>
+
+              <button class="enfoque-btn" data-image="gestalt">
+                <span class="enfoque-titulo">Psicoterapia Gestalt</span>
+                <span class="enfoque-descripcion">
+                  Trabajo experiencial en el aquí y ahora, integrando cuerpo,
+                  emoción y pensamiento para resolver asuntos inconclusos.
+                </span>
+              </button>
+
+              <button class="enfoque-btn" data-image="pnl">
+                <span class="enfoque-titulo"
+                  >Programación Neurolingüística (PNL)</span
+                >
+                <span class="enfoque-descripcion">
+                  Herramientas concretas para transformar patrones de pensamiento,
+                  emoción y conducta que hoy te generan malestar.
+                </span>
+              </button>
+            </div>
+
+            <div class="enfoques-visor">
+              <div class="enfoques-visor-inner">
+                <!-- Cambia las rutas por tus imágenes reales -->
+                <img
+                  id="enfoque-image"
+                  src="/img/psicoterapia-humanista.png"
+                  alt="Psicoterapia Humanista"
+                />
+              </div>
+              <p class="enfoques-nota">
+                Al seleccionar cada enfoque, se muestra una ilustración asociada a
+                la forma de trabajo terapéutico.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PSICOTERAPIA INDIVIDUAL -->
+      <section id="psicoterapia">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-kicker">Psicoterapia individual</div>
+            <h2 class="section-title">
+              Un espacio para comprender y cuidar tu historia
+            </h2>
+            <p class="section-subtitle">
+              La psicoterapia es un espacio para detenerte, ordenar, sentir y
+              comprender lo que estás viviendo, con acompañamiento profesional.
+            </p>
+          </div>
+
+          <div class="grid-2">
+            <div class="copy-block">
+              <p>
+                Desde una perspectiva Humanista y Gestalt, concibo la terapia como
+                un encuentro entre dos personas donde se trabaja con tu
+                experiencia actual, tu biografía y tus recursos internos.
+              </p>
+              <p>
+                El foco está en que puedas tomar conciencia de lo que te ocurre,
+                ponerle nombre, explorar nuevas formas de comprenderlo y de
+                relacionarte contigo y con los demás, a tu propio ritmo.
+              </p>
+              <p>
+                La Programación Neurolingüística (PNL) aporta herramientas
+                concretas para modificar patrones que se han vuelto rígidos:
+                pensamientos, emociones o conductas que hoy te generan malestar o
+                bloqueo.
+              </p>
+
+              <div class="pill-list">
+                <span class="pill">Adultos y jóvenes</span>
+                <span class="pill">Modalidad presencial y remota</span>
+                <span class="pill">Procesos breves y de mediana duración</span>
+              </div>
+            </div>
+
+            <aside class="card-soft">
+              <h3>¿Qué podemos trabajar en sesiones?</h3>
+              <p>
+                Algunos motivos frecuentes de consulta son: crisis vitales,
+                duelos, ansiedad, tristeza persistente, conflictos relacionales,
+                sensación de estar “estancado/a”, exigencia excesiva o
+                desconexión emocional.
+              </p>
+              <p>
+                En conjunto iremos definiendo el foco del proceso, la frecuencia
+                de las sesiones y la forma de evaluar tus avances, cuidando que la
+                terapia sea significativa y adecuada para ti.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- EMPRESAS -->
+      <section id="empresas">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-kicker">Empresas y organizaciones</div>
+            <h2 class="section-title">
+              Capacitaciones y consultoría en salud mental y clima laboral
+            </h2>
+            <p class="section-subtitle">
+              Programas diseñados a medida para empresas, colegios y servicios
+              públicos.
+            </p>
+          </div>
+
+          <div class="grid-2">
+            <div class="copy-block empresas-list">
+              <p>
+                Ofrezco servicios de capacitación y consultoría especializada con
+                foco en desarrollo humano y organizacional, buscando fortalecer el
+                bienestar y el desempeño de personas y equipos.
+              </p>
+              <p>Algunas temáticas que trabajo son:</p>
+              <ul>
+                <li>Gestión emocional y autocuidado de equipos.</li>
+                <li>Liderazgo y conducción de equipos humanos.</li>
+                <li>Resolución de conflictos y comunicación asertiva.</li>
+                <li>Primeros auxilios psicológicos (PAP).</li>
+                <li>Ley Karin y protocolo CEAL.</li>
+                <li>Cuidado integral de equipos y clima laboral.</li>
+              </ul>
+              <p>
+                Cada intervención se diseña en diálogo con la institución, para
+                responder a su realidad y a los desafíos específicos que enfrenta.
+              </p>
+            </div>
+
+            <aside class="card-soft">
+              <h3>¿Tu organización necesita apoyo?</h3>
+              <p>
+                Podemos coordinar una reunión exploratoria para comprender el
+                contexto de tu equipo y construir una propuesta acorde a sus
+                necesidades y recursos.
+              </p>
+              <p>
+                Escríbeme indicando el tipo de organización, la cantidad de
+                personas y el motivo principal de consulta, y coordinaremos
+                próximos pasos.
+              </p>
+              <a href="#contacto" class="btn btn-primary"
+                >Coordinar una reunión</a
+              >
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACTO -->
+      <section id="contacto" class="contacto">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-kicker">Contacto</div>
+            <h2 class="section-title">Reserva tu sesión</h2>
+            <p class="section-subtitle">
+              Si quieres agendar una hora o hacer una consulta, puedes escribir o
+              llamar directamente.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <p>
+              Por ahora las reservas se coordinan de manera directa. En tu mensaje
+              puedes indicar brevemente el motivo de consulta y tu disponibilidad
+              horaria, para encontrar juntos el mejor momento.
+            </p>
+
+            <div class="contact-data">
+              <!-- Ajustar datos reales -->
+              <p><strong>Correo:</strong> correo@psicologiahumanista.cl</p>
+              <p><strong>Teléfono / WhatsApp:</strong> +56 9 XXXX XXXX</p>
+              <p><strong>Ubicación:</strong> Ñuñoa, Santiago de Chile.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>
+          Centro de salud mental en Ñuñoa. Psicoterapia Humanista, Gestalt y PNL.
+          Atención cálida y profesional.
+        </p>
+        <p>
+          Ps. Mg. Ignacio Bravo – N.º 98737 de Registro Nacional de Prestadores
+          Individuales de Salud.
+        </p>
+        <p>© 2025 Centro de Salud Mental Ñuñoa. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- JS ENFOQUES: CAMBIAR IMAGEN SEGÚN ENFOQUE -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const buttons = document.querySelectorAll(".enfoque-btn");
+        const img = document.getElementById("enfoque-image");
+
+        // Ajusta estas rutas a los nombres reales de tus archivos
+        const images = {
+          humanista: "/img/psicoterapia-humanista.png",
+          gestalt: "/img/psicoterapia-gestalt.png",
+          pnl: "/img/psicologia-humanista-pnl.png",
+        };
+
+        buttons.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            buttons.forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            const key = btn.dataset.image;
+            if (images[key]) {
+              img.src = images[key];
+              img.alt =
+                btn.querySelector(".enfoque-titulo").textContent.trim();
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
