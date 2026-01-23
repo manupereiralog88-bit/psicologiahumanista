@@ -17,9 +17,7 @@ body {
 
 /* Layout general */
 main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 32px;
+  width: 100%;
 }
 
 /* Header */
@@ -253,7 +251,7 @@ main {
   margin: 0 auto;
   padding: 0 32px;
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 400px 1fr;
   gap: 4rem;
   align-items: start;
 }
@@ -266,7 +264,7 @@ main {
 
 .libro-img {
   width: 100%;
-  max-width: 500px;
+  max-width: 100%;
   height: auto;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -604,7 +602,10 @@ main {
   border-radius: 8px;
 }
 
-/* Contacto */
+/* =========================
+   CONTACTO
+========================= */
+
 .contacto {
   padding: 60px 0;
   background: #fff;
@@ -620,7 +621,7 @@ main {
   font-size: 32px;
   font-weight: 700;
   color: #222;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   text-align: center;
 }
 
@@ -630,6 +631,10 @@ main {
   gap: 3rem;
   align-items: center;
 }
+
+/* =========================
+   INFO CONTACTO
+========================= */
 
 .contacto-info {
   display: flex;
@@ -651,7 +656,8 @@ main {
   font-size: 16px;
 }
 
-.contacto-item a {
+/* enlaces normales (NO botón) */
+.contacto-item a:not(.email-cta-btn) {
   color: #2c5f41;
   text-decoration: none;
   font-size: 16px;
@@ -659,61 +665,48 @@ main {
   transition: color 0.2s ease;
 }
 
-.contacto-item a:hover {
+.contacto-item a:not(.email-cta-btn):hover {
   color: #1e422d;
   text-decoration: underline;
 }
 
-/* Botón correo - estado normal */
+/* =========================
+   BOTÓN CORREO
+========================= */
+
 .email-cta-btn {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.75rem;
 
-  padding: 12px 18px;
-  width: fit-content;
-
+  padding: 12px 20px;
   background: #2c5f41;
   color: #fff;
 
-  font: inherit;
-  font-weight: 600;
-
-  border-radius: 6px;
+  border-radius: 8px;
   text-decoration: none;
-
-  /* evita efectos raros */
-  transition: background-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-/* FORZAR texto visible siempre */
-.email-cta-btn span {
-  color: #fff;
   font-weight: 600;
+  font-size: 15px;
+
+  width: fit-content;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 0.5rem;
 }
 
-/* FORZAR icono visible siempre */
-.email-cta-btn svg,
-.email-cta-btn .email-icon {
-  fill: #fff;
-  color: #fff;
-}
-
-/* Hover sutil (igual a Reserva tu hora) */
 .email-cta-btn:hover {
   background: #1e422d;
-  box-shadow: 0 3px 8px rgba(44,95,65,.25);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(44, 95, 65, 0.3);
+  color: #fff;
   text-decoration: none;
 }
 
-
-
-.email-icon {
-  width: 24px;
-  height: 24px;
+.email-cta-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
   flex-shrink: 0;
 }
-
 
 .contacto-item p {
   color: #666;
@@ -722,11 +715,15 @@ main {
   margin: 0;
 }
 
+/* =========================
+   MAPA GOOGLE
+========================= */
+
 .map-wrapper {
   width: 100%;
   max-width: 800px;
   height: 300px;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
@@ -738,109 +735,18 @@ main {
   display: block;
 }
 
-/* Footer */
-.site-footer {
-  background: #1a1a1a;
-  color: #fff;
-  padding: 3rem 2rem;
-  margin-top: 5rem;
-  border-top: 1px solid #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0;
-  flex-wrap: wrap;
-}
+/* =========================
+   RESPONSIVE
+========================= */
 
-.site-footer a {
-  color: #ccc;
-  text-decoration: none;
-  font-weight: 300;
-  font-size: 14px;
-  transition: color 0.2s ease;
-  padding: 0.5rem 1rem;
-  position: relative;
-}
+@media (max-width: 768px) {
+  .contacto-inner {
+    padding: 0 20px;
+  }
 
-.site-footer a:not(:last-child)::after {
-  content: "•";
-  position: absolute;
-  right: -0.25rem;
-  color: #555;
-  font-weight: 300;
-}
-
-.site-footer a:hover {
-  color: #fff;
-}
-
-.footer-date {
-  color: #999;
-  font-size: 14px;
-  font-weight: 300;
-  margin: 0;
-  padding: 0.5rem 1rem;
-}
-
-.site-footer-text {
-  background: #1a1a1a;
-  color: #ccc;
-  padding: 1.5rem 2rem;
-  text-align: center;
-  font-size: 12px;
-  font-weight: 300;
-  line-height: 1.6;
-  border-top: 1px solid #333;
-}
-
-.site-footer-text p {
-  margin: 0;
-  color: #999;
-}
-
-.temas-section {
-  padding: 60px 0;
-  background: #fafafa;
-  text-align: center;
-}
-
-.temas-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 32px;
-}
-
-.temas-title-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  margin-bottom: 1rem;
-  transition: all 0.2s ease;
-}
-
-.temas-title-link:hover {
-  transform: translateY(-2px);
-}
-
-.temas-title-link h2 {
-  font-size: 32px;
-  font-weight: 700;
-  color: #222;
-  margin: 0;
-  transition: color 0.2s ease;
-}
-
-.temas-title-link:hover h2 {
-  color: #2c5f41;
-}
-
-.temas-intro {
-  font-size: 18px;
-  font-weight: 300;
-  color: #666;
-  line-height: 1.6;
-  max-width: 600px;
-  margin: 0 auto;
+  .contacto h2 {
+    font-size: 28px;
+  }
 }
 
 /* Botón WhatsApp */
@@ -1443,11 +1349,177 @@ main {
   .modal-content {
     padding: 1.5rem;
   }
-  .contacto .email-cta-btn:hover {
-  background: #1e422d !important;
-  color: #fff !important;
-  box-shadow: 0 3px 8px rgba(44,95,65,.25);
+/* =========================
+   BANNER CONSULTA
+========================= */
+
+.consulta-banner {
+  width: 100%;
+  background: #f6f6f6;
+  padding: 4rem 0;
+}
+
+.consulta-banner-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.consulta-slider {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.consulta-slide {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.consulta-slide img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* Hover suave */
+.consulta-slide:hover img {
+  transform: scale(1.05);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .consulta-slider {
+    grid-template-columns: 1fr;
+  }
+
+  .consulta-slide img {
+    height: 220px;
+  }
+}
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer {
+  width: 100%;
+  background: #1c1c1c;
+  color: #bdbdbd;
+  padding: 2rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 14px;
+}
+
+.site-footer a {
+  color: #bdbdbd;
   text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: #ffffff;
+}
+
+.site-footer-text {
+  width: 100%;
+  background: #141414;
+  color: #9e9e9e;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 13px;
+  line-height: 1.6;
+}
+/* =========================
+   TEMAS DE ACTUALIDAD
+========================= */
+
+.temas-section {
+  width: 100%;
+  padding: 50px 0;
+  background: #fafafa;
+}
+
+.temas-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+.temas-title-link {
+  text-decoration: none;
+  width: fit-content;
+}
+
+.temas-title-link h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2c5f41;
+  margin: 0;
+}
+
+.temas-title-link:hover h2 {
+  text-decoration: underline;
+}
+
+.temas-intro {
+  font-size: 17px;
+  font-weight: 300;
+  color: #555;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.temas-media img {
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.temas-media img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+.temas-cta {
+  display: block;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.temas-cta:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .temas-section {
+    padding: 60px 0;
+  }
+
+  .temas-title-link h2 {
+    font-size: 26px;
+  }
+
+  .temas-intro {
+    font-size: 16px;
+  }
 }
 
 
