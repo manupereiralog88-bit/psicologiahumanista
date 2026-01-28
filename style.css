@@ -1522,4 +1522,234 @@ main {
   }
 }
 
+/* =========================
+   TEMAS DE ACTUALIDAD
+========================= */
+
+.temas-section {
+  width: 100%;
+  padding: 50px 0;
+  background: #fafafa;
+}
+
+.temas-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+}
+
+/* Título (SEO, no link) */
+.temas-inner h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2c5f41;
+  margin: 0;
+}
+
+/* Texto introductorio */
+.temas-intro {
+  font-size: 17px;
+  font-weight: 300;
+  color: #555;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+/* =========================
+   CTA IMAGEN
+========================= */
+
+.temas-cta {
+  display: block;
+  max-width: 950px;
+  margin: 2rem auto 0;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden; /* 🔥 esto mata la línea */
+}
+
+
+.temas-cta img {
+  display: block;
+  width: calc(100% + 2px); /* tapa pixel residual */
+  height: auto;
+  aspect-ratio: 950 / 240;
+  object-fit: cover;
+
+  margin-right: -2px;      /* mata la línea derecha */
+  border: 0;
+  outline: none;
+}
+
+
+
+/* Hover mínimo (opcional y clínico) */
+.temas-cta:hover {
+  opacity: 0.97;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .temas-section {
+    padding: 60px 0;
+  }
+
+  .temas-inner {
+    padding: 0 20px;
+  }
+
+  .temas-inner h2 {
+    font-size: 26px;
+  }
+
+  .temas-intro {
+    font-size: 16px;
+  }
+}
+/* =========================
+   LISTADO DE TEMAS
+========================= */
+
+.temas-list {
+  padding: 60px 0;
+}
+
+.temas-list-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+}
+
+.tema-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.tema-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  display: block;
+}
+
+.tema-card h2 {
+  font-size: 20px;
+  margin: 12px 0 6px;
+  color: #2c5f41;
+}
+
+.tema-card p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.5;
+}
+.tema-hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.tema-imagen-grande img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.tema-contenido h1 {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .tema-hero-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================
+   CONTENIDO DETALLADO
+========================= */
+
+.tema-detalle {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 0 32px;
+}
+
+.tema-detalle h2 {
+  font-size: 28px;
+  color: #2c5f41;
+  margin-bottom: 16px;
+}
+
+.tema-detalle p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #333;
+}
+/* =========================
+   TEMAS – ÍNDICE
+========================= */
+
+.temas-index {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+.temas-index h1 {
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.tema-item {
+  margin-bottom: 1rem;
+}
+
+.tema-item a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.tema-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.tema-item span {
+  font-size: 1.05rem;
+  line-height: 1.35;
+  font-weight: 600;        /* CTA */
+  color: #1f2f2d;          /* texto principal */
+  transition: color 0.2s ease;
+}
+.tema-item a:hover span {
+  color: #2a7a6f;
+}
+
 
