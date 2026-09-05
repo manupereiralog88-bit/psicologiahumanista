@@ -1,282 +1,303 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Centro de Salud Mental Ñuñoa – Ignacio Bravo Bustos</title>
-  <meta name="description" content="Centro de Salud Mental Ñuñoa. Psicoterapia individual, consultoría organizacional y capacitación empresarial." />
-
-  <!-- Google Fonts -->
+  <meta name="description" content="Psicoterapia Humanista, Gestalt y PNL en Ñuñoa. Acompañamiento terapéutico individual y servicios de capacitación y consultoría.">
+  <meta name="theme-color" content="#173d34">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root{--green:#173d34;--green2:#234d42;--ink:#203a33;--muted:#52615b;--cream:#f1eee6;--paper:#fbfaf6;--soft:#e8e5dc;--line:rgba(32,58,51,.16);--serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter',Arial,sans-serif;--max:1180px}
+    html{scroll-behavior:smooth}
+    body.home{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.6}
+    body.home *,body.home *:before,body.home *:after{box-sizing:border-box}
+    body.home img{max-width:100%;display:block}
+    body.home a{color:inherit}
+    .wrap{width:min(var(--max),calc(100% - 72px));margin:auto}
+
+    /* HEADER */
+    .home-header{height:108px;background:rgba(251,250,246,.98);border-bottom:1px solid rgba(32,58,51,.08);position:relative;z-index:20}
+    .home-header-inner{height:100%;width:min(1320px,calc(100% - 72px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:35px}
+    .brand{display:flex;align-items:center;gap:16px;text-decoration:none;flex-shrink:0}
+    .brand img{width:70px;height:70px;object-fit:contain}
+    .brand-name{font-family:var(--serif);font-size:22px;line-height:.92;font-weight:600;letter-spacing:-.02em}
+    .nav{display:flex;align-items:center}
+    .nav a{font-size:12px;text-decoration:none;padding:7px 18px;border-right:1px solid var(--line);white-space:nowrap;transition:color .2s}
+    .nav a:hover{color:var(--green2)}
+    .nav a:nth-last-of-type(2){border-right:0}
+    .nav .reserve{margin-left:18px;padding:11px 20px;background:transparent;color:var(--green);border:1px solid var(--green);border-radius:2px;font-weight:600}
+    .nav .reserve:hover{color:#fff;background:var(--green)}
+    .menu-btn{display:none;border:0;background:transparent;color:var(--green);font:600 24px var(--sans);cursor:pointer}
+
+    /* HERO */
+    .hero{min-height:555px;background:var(--cream);overflow:hidden}
+    .hero-grid{width:min(1320px,100%);min-height:555px;margin:auto;display:grid;grid-template-columns:.88fr 1.12fr}
+    .hero-copy{position:relative;display:flex;flex-direction:column;justify-content:center;padding:58px 65px 58px 78px}
+    .hero-copy:before{content:"";position:absolute;left:0;bottom:25px;width:120px;height:235px;opacity:.18;background:linear-gradient(118deg,transparent 48%,#71877b 49%,transparent 52%) 18px 10px/60px 82px no-repeat,linear-gradient(35deg,transparent 48%,#71877b 49%,transparent 52%) 55px 72px/65px 82px no-repeat,linear-gradient(118deg,transparent 48%,#71877b 49%,transparent 52%) 8px 142px/76px 88px no-repeat;pointer-events:none}
+    .kicker{display:flex;align-items:center;gap:9px;margin:0 0 24px;color:var(--green);font-size:10px;line-height:1.2;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+    .kicker:after{content:"";width:34px;height:1px;background:#8da096}
+    .hero h1{position:relative;z-index:1;max-width:500px;margin:0 0 24px;font-family:var(--serif);font-size:clamp(52px,5vw,76px);line-height:.94;font-weight:500;letter-spacing:-.035em}
+    .hero-lead{max-width:440px;margin:0;color:#44534e;font-size:14px;line-height:1.75}
+    .hero-actions{display:flex;align-items:center;gap:22px;margin-top:23px;position:relative;z-index:1}
+    .btn-primary{display:inline-flex;align-items:center;gap:11px;padding:0 0 7px;background:transparent;color:var(--green)!important;text-decoration:none;border-bottom:1px solid var(--green);border-radius:0;font-size:11px;font-weight:600}
+    .btn-primary:hover{color:var(--green2)!important}
+    .text-link{display:inline-flex;align-items:center;gap:10px;color:var(--green);font-size:11px;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(23,61,52,.35);padding-bottom:5px}
+    .text-link span{transition:transform .2s}.text-link:hover span{transform:translateX(4px)}
+    .hero-action-icon{width:30px;height:30px;border-radius:50%;background:#e5e9e3;display:grid;place-items:center;font-size:14px;font-weight:400}.hero-photo{min-height:555px;overflow:hidden}
+    .hero-photo img{width:100%;height:100%;min-height:555px;object-fit:cover;object-position:center}
+
+    /* APPROACHES */
+    .approaches{padding:67px 0 73px;background:var(--paper)}
+    .section-head{text-align:center;margin-bottom:32px}
+    .section-head .kicker{justify-content:center;margin:0}
+    .section-head .kicker:before{content:"";width:34px;height:1px;background:#8da096}
+    .approach-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+    .approach{display:grid;color:inherit;text-decoration:none;grid-template-columns:58px 1fr;gap:22px;padding:7px 40px;min-height:148px;border-right:1px solid var(--line)}
+    .approach:first-child{padding-left:18px}.approach:last-child{padding-right:18px;border-right:0}
+    .approach-icon{width:58px;height:58px;border-radius:50%;background:#e9e6dd;display:grid;place-items:center;color:var(--green)}
+    .approach-icon svg{width:29px;height:29px}
+    .approach h2{margin:0 0 8px;font-family:var(--serif);font-size:24px;line-height:1.02;font-weight:500}
+    .approach p{margin:0;color:#4d5a55;font-size:11px;line-height:1.72}
+
+    /* EMPRESAS */
+    .business{position:relative;overflow:hidden;padding:70px 0;background:#eeece4}
+    .business:after{content:"";position:absolute;right:10px;bottom:-30px;width:135px;height:245px;opacity:.16;background:linear-gradient(120deg,transparent 48%,#728a7d 49%,transparent 52%) 20px 10px/75px 90px no-repeat,linear-gradient(35deg,transparent 48%,#728a7d 49%,transparent 52%) 55px 78px/75px 90px no-repeat,linear-gradient(120deg,transparent 48%,#728a7d 49%,transparent 52%) 0 145px/85px 90px no-repeat}
+    .business-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:65px;align-items:center;position:relative;z-index:1}
+    .business h2{margin:0 0 17px;font-family:var(--serif);font-size:clamp(43px,4vw,58px);line-height:.95;font-weight:500;letter-spacing:-.025em}
+    .business-copy>p{max-width:450px;margin:0;color:#4d5a55;font-size:12px;line-height:1.7}
+    .service-icons{display:grid;grid-template-columns:repeat(4,1fr);margin-top:2px}
+    .service{padding:12px 23px;text-align:center;border-right:1px solid var(--line)}
+    .service:last-child{border-right:0}.service svg{width:38px;height:38px;margin:0 auto 12px;color:var(--green)}
+    .service span{display:block;font-size:11px;line-height:1.5}
+    .business-image img{width:100%;height:280px;object-fit:cover;border-radius:2px}
+    .business-cta{display:inline-flex;align-items:center;gap:12px;margin-top:25px;padding:12px 17px;background:var(--green);color:#fff!important;text-decoration:none;border-radius:2px;font-size:11px;font-weight:600}
+
+    /* CONTACT */
+    .contact{padding:69px 0 62px;background:var(--paper)}
+    .contact-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:56px;align-items:start}
+    .contact h2{margin:0 0 25px;font-family:var(--serif);font-size:48px;line-height:1;font-weight:500}
+    .contact-row{display:flex;gap:13px;align-items:flex-start;margin-bottom:22px;font-size:12px}
+    .contact-row svg{width:19px;height:19px;flex:0 0 19px;color:var(--green);margin-top:1px}
+    .contact-row strong{display:block;margin-bottom:3px;color:var(--green);font-weight:500}.contact-row p{margin:0}
+    .contact-row a{color:var(--green);text-decoration:none;border-bottom:1px solid rgba(23,61,52,.3)}
+    .map{height:190px;margin-top:27px;overflow:hidden;border-radius:2px}.map iframe{width:100%;height:100%;border:0}
+    .gallery{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:8px;height:300px}
+    .gallery figure{margin:0;overflow:hidden;border-radius:5px}.gallery img{width:100%;height:100%;object-fit:cover}.gallery figure:first-child{grid-column:1;grid-row:1}.gallery figure:nth-child(2){grid-column:2;grid-row:1}.gallery figure:nth-child(3){grid-column:1;grid-row:2}.gallery figure:nth-child(4){grid-column:2;grid-row:2}
+
+    /* TOPICS */
+    .topics{padding:39px 0;background:#f1eee6}.topics-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:50px}.topics-copy{display:grid;grid-template-columns:68px 1fr;gap:20px;align-items:center}.topics-icon{width:68px;height:68px;border-radius:50%;background:#e3e1d7;display:grid;place-items:center;color:var(--green)}.topics-icon svg{width:33px;height:33px}.topics-copy .kicker{margin:0 0 7px}.topics-copy h2{margin:0;font-family:var(--serif);font-size:30px;line-height:1;font-weight:500}.topics-editorial{display:flex;align-items:center;justify-content:center;min-width:235px;height:62px;padding:0 22px;border-left:1px solid var(--line);border-right:1px solid var(--line);color:var(--green);font-family:var(--serif);font-size:19px;font-style:italic;text-align:center}.topics-btn{justify-self:end;display:inline-flex;align-items:center;gap:15px;padding:13px 20px;border:1px solid var(--green);border-radius:3px;color:var(--green);text-decoration:none;font-size:11px;font-weight:600}
+
+    /* FOOTER — versión vigente del sitio */
+    .site-footer{
+      background:#1a1a1a;
+      color:#ccc;
+      text-align:center;
+      margin:0;
+      padding:0;
+      border-top:1px solid #333;
+    }
+    .site-footer a{
+      color:#ccc;
+      text-decoration:none;
+      font-weight:300;
+      font-size:10px;
+      transition:color .2s ease;
+      padding:4px 10px;
+      position:relative;
+    }
+    .site-footer a:first-child::after{
+      content:"•";
+      position:absolute;
+      right:-2px;
+      color:#555;
+      font-weight:300;
+    }
+    .site-footer a:hover{color:#fff}
+    .site-footer .footer-legal{
+      padding:17px 20px 10px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:0;
+      flex-wrap:wrap;
+    }
+    .footer-date{
+      color:#999;
+      font-size:9px;
+      font-weight:300;
+      margin:0;
+      padding:0 20px 11px;
+    }
+    .site-footer-text{
+      background:#151515;
+      color:#999;
+      padding:14px 20px 17px;
+      text-align:center;
+      font-size:9px;
+      font-weight:300;
+      line-height:1.6;
+      border-top:1px solid #333;
+    }
+    .site-footer-text p{
+      margin:0;
+      color:#777;
+    }
+
+    .whatsapp-btn{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      width:47px;
+      height:47px;
+      border-radius:50%;
+      background:#20c76a;
+      color:#fff;
+      display:grid;
+      place-items:center;
+      z-index:100;
+      box-shadow:0 4px 16px rgba(0,0,0,.16);
+      text-decoration:none;
+    }
+    .whatsapp-btn svg{width:24px;height:24px}
+
+    /* MOBILE NAV */
+    @media(max-width:900px){.home-header{height:auto}.home-header-inner{min-height:84px;width:calc(100% - 36px)}.menu-btn{display:block}.nav{display:none;position:absolute;left:0;right:0;top:84px;padding:10px 18px 20px;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 10px 25px rgba(0,0,0,.08);flex-direction:column;align-items:stretch}.nav.open{display:flex}.nav a{border-right:0;border-bottom:1px solid var(--line);padding:13px 8px}.nav .reserve{margin:12px 0 0;text-align:center}.hero-grid{grid-template-columns:1fr}.hero-photo{order:1;min-height:430px}.hero-photo img{min-height:430px}.hero-copy{order:2;padding:52px 30px 47px}.approach-grid{grid-template-columns:1fr}.approach,.approach:first-child,.approach:last-child{border-right:0;border-bottom:1px solid var(--line);padding:24px 0}.approach:last-child{border-bottom:0}.business-grid,.contact-grid,.topics-grid{grid-template-columns:1fr}.business-image{order:-1}.business-image img{height:300px}.service-icons{margin-top:32px}.contact .gallery{height:420px}.topics-editorial{display:none}.topics-btn{justify-self:start}.footer-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:560px){.wrap{width:calc(100% - 32px)}.home-header-inner{width:calc(100% - 28px)}.brand img{width:55px;height:55px}.brand-name{font-size:18px}.hero-photo,.hero-photo img{min-height:340px}.hero-copy{padding:43px 16px 40px}.hero h1{font-size:52px}.hero-lead{font-size:13px}.hero-actions{flex-wrap:wrap;gap:15px}.approaches{padding:54px 0 57px}.business{padding:58px 0}.business-grid{gap:35px}.business-image img{height:230px}.service-icons{grid-template-columns:1fr 1fr;row-gap:22px}.service{border-right:0;border-bottom:1px solid var(--line);padding:12px 10px 17px}.service:nth-child(odd){border-right:1px solid var(--line)}.service:nth-last-child(-n+2){border-bottom:0}.contact{padding:56px 0}.contact h2{font-size:42px}.map{height:220px}.gallery{height:390px}.topics-copy{grid-template-columns:58px 1fr;gap:14px}.topics-icon{width:58px;height:58px}.topics-copy h2{font-size:27px}.footer-grid{grid-template-columns:1fr;gap:30px}.footer-bottom{flex-direction:column}.footer-legal{flex-wrap:wrap}}
+  </style>
 </head>
-
-<body>
-
-<!-- HEADER -->
-<header class="site-header">
-  <div class="header-inner">
-
-    <!-- LOGO + TÍTULO (clickeable) -->
-    <a href="index.html" class="logo-section logo-link">
-      <img src="assets/img/logo.png" alt="Centro de Salud Mental Ñuñoa" class="logo" />
-      <div class="logo-text">
-        <div class="logo-title">
-          Centro de<br>
-          Salud Mental<br>
-          Ñuñoa
-        </div>
-      </div>
-    </a>
-
-    <!-- NAVEGACIÓN -->
-    <nav class="main-nav">
-      <a href="index.html#acerca-de-mi">Acerca de mí</a>
-      <a href="index.html#empresas">Capacitación Empresa</a>
-      <a href="index.html#psicoterapia">Psicoterapia</a>
-      <a href="index.html#temas">Temas de Actualidad</a>
-      <a href="index.html#contacto">Contacto</a>
-      <a href="reserva.html" class="cta">Reserva tu hora</a>
-    </nav>
-
-  </div>
-</header>
-
-<main>
-
-<!-- ENFOQUES + LIBRO -->
-<section id="psicoterapia" class="block-2">
-  <div class="block-2-inner">
-
-    <!-- LIBRO -->
-    <div class="libro-wrapper">
-      <img src="assets/img/libro.jpeg" alt="Libro interactivo" id="openLibro" class="libro-img" />
-    </div>
-
-    <!-- ENFOQUES -->
-    <div class="enfoques">
-      <a href="psicoterapia.html" class="enfoques-title-link">
-        <h2>Enfoques Terapéuticos</h2>
+<body class="home">
+  <header class="home-header">
+    <div class="home-header-inner">
+      <a class="brand" href="index.html" aria-label="Centro de Salud Mental Ñuñoa">
+        <img src="assets/img/logo.png" alt="Centro de Salud Mental Ñuñoa">
+        <span class="brand-name">Centro de<br>Salud Mental<br>Ñuñoa</span>
       </a>
-      <div class="enfoques-list">
-        <div class="enfoque-item">
-          <h3>Psicoterapia Humanista</h3>
-          <p>Se centra en tu potencial de crecimiento y autorrealización, viéndote como una persona completa con la capacidad de tomar tus propias decisiones. El terapeuta crea un ambiente de aceptación incondicional y empatía para que explores tus pensamientos, emociones y creencias del presente, sin juicios.</p>
+      <button class="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">☰</button>
+      <nav class="nav" id="mainNav">
+        <a href="index.html#hero">Acerca de mí</a>
+        <a href="empresas.html">Capacitación Empresa</a>
+        <a href="psicoterapia.html">Psicoterapia</a>
+        <a href="temas.html">Temas de Actualidad</a>
+        <a href="index.html#contacto">Contacto</a>
+        <a class="reserve" href="reserva.html">Reserva tu hora</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">Acompañamiento psicoterapéutico</p>
+          <h1>Un espacio para comprenderte, sanar y crecer.</h1>
+          <p class="hero-lead">Psicoterapia humanista integrativa para personas que buscan bienestar, claridad y una vida con mayor sentido.</p>
+          <div class="hero-actions"><a class="btn-primary" href="reserva.html"><span class="hero-action-icon">↗</span>Reserva tu sesión</a></div>
         </div>
-        <div class="enfoque-item">
-          <h3>Psicoterapia Gestalt</h3>
-          <p>Te invita a enfocarte en el "aquí y ahora", es decir, en tus experiencias, emociones y sensaciones del momento presente. Su objetivo principal es que logres un profundo "darse cuenta" de cómo funcionan tus pensamientos, sentimientos y acciones, y cómo se manifiestan en tu cuerpo y tu vida.</p>
-        </div>
-        <div class="enfoque-item">
-          <h3>Programación Neurolingüística (PNL)</h3>
-          <p>Te ayuda a entender cómo funcionan tu mente, tu lenguaje y tus comportamientos para que puedas realizar cambios positivos en tu vida. Se enfoca en el presente y te ofrece herramientas prácticas y concretas para "reprogramar" patrones de pensamiento, emoción y acción que ya están obsoletos.</p>
-        </div>
+        <div class="hero-photo"><img src="assets/img/terapeuta.png" alt="Ps. Mg. Ignacio Bravo Bustos"></div>
       </div>
-    </div>
+    </section>
 
-  </div>
-</section>
-
-<!-- MODAL DEL LIBRO -->
-<div id="modalOverlay" class="modal-overlay hidden">
-  <div class="modal-content">
-    <button class="modal-close" id="closeModal" aria-label="Cerrar modal">&times;</button>
-    
-    <!-- Paso 1: Motivo de consulta -->
-    <div class="step active" data-step="0">
-      <h3>¿Qué te trajo por acá?</h3>
-      <div class="modal-options">
-        <button class="option-btn" data-next="1">Atención rápida</button>
-        <button class="option-btn" data-next="1">Información</button>
-      </div>
-    </div>
-
-    <!-- Paso 2: Tipo de acompañamiento -->
-    <div class="step" data-step="1">
-      <h3>¿Cómo te gustaría que te acompañe?</h3>
-      <div class="modal-options">
-        <button class="option-btn" data-next="2">Presencial</button>
-        <button class="option-btn" data-next="2">Remoto</button>
-      </div>
-      <button class="back-btn" onclick="showStep(0)">← Volver</button>
-    </div>
-
-    <!-- Paso 3: CTA Reserva -->
-    <div class="step" data-step="2">
-      <h3>¿Deseas reservar tu hora?</h3>
-      <a href="reserva.html" class="cta-modal">Reserva tu hora</a>
-      <button class="back-btn" onclick="showStep(1)">← Volver</button>
-    </div>
-  </div>
-</div>
-
-<!-- SECCIÓN EMPRESAS -->
-<section id="empresas" class="empresas-section">
-  <div class="empresas-inner">
-    <div class="empresas-content">
-      <a href="empresas.html" class="empresas-title-link">
-        <h2>Servicios de Capacitación y Consultoría</h2>
-      </a>
-      
-      <p class="empresas-intro">Servicios de capacitación y consultoría especializada para empresas, colegios y servicios públicos. Mi objetivo es potenciar el desarrollo humano y organizacional a través de programas personalizados que abordan temáticas de: gestión emocional, liderazgo, resolución de conflictos, primeros auxilios psicológicos (PAP), Ley Karin, protocolo CEAL, cuidado integral de equipos, comunicación asertiva, realizando asesorías en procesos de gestión y cambio organizacional, diseñando programas que las organizaciones necesiten. Mediante la consultoría estratégica, colaboro con las instituciones para crear ambientes que promuevan el bienestar, la excelencia y el máximo potencial de cada trabajador, su equipo de trabajo y la organización.</p>
-      
-      <div class="servicios-list">
-        <div class="servicio-item">
-          <h3>Capacitación</h3>
-          <p>Capacitación en temas de salud mental, manejo del estrés, comunicación efectiva y trabajo en equipo.</p>
-        </div>
-        
-        <div class="servicio-item">
-          <h3>Coaching estratégico</h3>
-          <p>Acompañamiento personalizado para líderes y ejecutivos en el desarrollo de habilidades directivas.</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="empresas-image">
-      <img src="assets/img/servicios-capacitacion-consultoria.png" alt="Servicios de capacitación y consultoría organizacional" />
-    </div>
-  </div>
-</section>
-
-<!-- HERO (Acerca de mí) -->
-<section class="hero" id="acerca-de-mi">
-  <div class="hero-inner">
-    <div class="hero-content">
-      <h1>Acerca de mí</h1>
-      <div class="hero-text">
-        <p>Nací en Santiago de Chile en el año 1985 y soy Psicólogo Magíster en Clínica Gestalt, con diplomados en PNL y Trauma Complejo Relacional. Llevo más de 15 años de trayectoria en contextos relacionados a la infancia y adolescencia, trabajando 10 años en Programa de Reparación en Maltrato, siendo Director de PRM Ciudad del Niño Isla de Maipo. Además, en contextos ligados a adolescencia y responsabilidad penal adolescente. Desde el año 2019, atiendo de manera particular a población infanto-juvenil y adulta.</p>
-        <p>Por otra parte, me desempeño como consultor y capacitador a empresas en procesos de gestión y cambio organizacional, diseñando programas que las organizaciones necesiten.</p>
-        <p>Respecto al área docente, soy profesor de postgrado en línea Humanista – Gestalt en Instituto Superior de Especialidades Profesionales (ISEPS) – Perú.</p>
-      </div>
-      <a href="reserva.html" class="hero-cta">Reserva tu sesión</a>
-    </div>
-    
-    <div class="hero-image">
-      <img src="assets/img/terapeuta.png" alt="Ps. Mg. Ignacio Bravo Bustos" />
-    </div>
-  </div>
-</section>
-
-<!-- CONTACTO -->
-<section id="contacto" class="contacto">
-  <div class="contacto-inner">
-    <h2>Contacto</h2>
-
-    <div class="contacto-content">
-      <div class="contacto-info">
-        <div class="contacto-item">
-          <strong>Correo:</strong>
-          <a href="mailto:ignaciobravobustos@gmail.com" class="email-cta-btn">
-            <svg class="email-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
-            </svg>
-            <span>Escríbeme</span>
+    <section class="approaches" id="psicoterapia">
+      <div class="wrap">
+        <div class="section-head"><p class="kicker">Enfoques terapéuticos</p></div>
+        <div class="approach-grid">
+          <a class="approach" href="psicoterapia.html">
+            <div class="approach-icon"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 34V16M20 18c-5-2-7-5-7-9 5 0 8 3 7 9Zm0 3c5-2 8-5 8-10-5 0-9 3-8 10Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            <div><h2>Psicoterapia Humanista</h2><p>Un enfoque centrado en la persona, su experiencia y sus posibilidades de crecimiento, desde la aceptación y la empatía.</p></div>
+          </a>
+          <a class="approach" href="psicoterapia.html">
+            <div class="approach-icon"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="13" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M11 32c.8-6.4 4-10 9-10s8.2 3.6 9 10M15 25l5 3 5-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            <div><h2>Psicoterapia Gestalt</h2><p>Una mirada al aquí y ahora, a las experiencias y emociones presentes y al darse cuenta de cómo vivimos.</p></div>
+          </a>
+          <a class="approach" href="psicoterapia.html">
+            <div class="approach-icon"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 7c-5 0-8 4-8 8 0 2.1.8 3.9 2.2 5.2C11.9 22 11 24 11 27c0 4 3.5 6 9 6s9-2 9-6c0-3-.9-5-3.2-6.8C27.2 18.9 28 17.1 28 15c0-4-3-8-8-8Z" stroke="currentColor" stroke-width="1.5"/><path d="M16 13c2 1 2 3 0 4m8-4c-2 1-2 3 0 4M16 25c1.2-1 2.8-1 4 0 1.2-1 2.8-1 4 0" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+            <div><h2>Programación Neurolingüística (PNL)</h2><p>Herramientas prácticas para comprender patrones de pensamiento, lenguaje y comportamiento y ampliar tus posibilidades de acción.</p></div>
           </a>
         </div>
+      </div>
+    </section>
 
-        <div class="contacto-item">
-          <strong>Dirección:</strong>
-          <p>Profesor Rodolfo Lenz 505, Depto 55, Ñuñoa</p>
+    <section class="business" id="empresas">
+      <div class="wrap business-grid">
+        <div class="business-copy">
+          <p class="kicker">Servicios para empresas</p>
+          <h2>Capacitación y<br>Consultoría</h2>
+          <p>Programas a medida para fortalecer equipos, liderazgos y culturas organizacionales saludables.</p>
+          <a class="business-cta" href="empresas.html">Conoce más sobre servicios para empresas <span>→</span></a>
+        </div>
+        <div class="business-services">
+          <div class="service-icons">
+            <div class="service"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="13" r="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="20" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="36" cy="20" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M16 34c.7-6 3.2-9 8-9s7.3 3 8 9M5 35c.5-5 2.4-7.5 6.5-7.5M43 35c-.5-5-2.4-7.5-6.5-7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>Desarrollo de<br>Liderazgos</span></div>
+            <div class="service"><svg viewBox="0 0 48 48" fill="none"><path d="M9 12h19a6 6 0 0 1 6 6v5a6 6 0 0 1-6 6H18l-7 5v-5H9a6 6 0 0 1-6-6v-5a6 6 0 0 1 6-6Z" stroke="currentColor" stroke-width="1.5"/><path d="M28 15h5a6 6 0 0 1 6 6v4c0 3.3-2.7 6-6 6h-2v4l-6-4" stroke="currentColor" stroke-width="1.5"/></svg><span>Comunicación y<br>Trabajo en Equipo</span></div>
+            <div class="service"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="13" stroke="currentColor" stroke-width="1.5"/><path d="m24 15 2.8 5.7L33 24l-6.2 3.3L24 33l-2.8-5.7L15 24l6.2-3.3L24 15Z" stroke="currentColor" stroke-width="1.5"/></svg><span>Bienestar<br>Organizacional</span></div>
+            <div class="service"><svg viewBox="0 0 48 48" fill="none"><path d="M8 38V25M17 38V19M26 38V27M35 38V12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="m7 20 9-7 9 5 10-10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Capacitación<br>a Medida</span></div>
+          </div>
+          <div class="business-image"><img src="assets/img/servicios-capacitacion-consultoria.png" alt="Capacitación y consultoría para organizaciones" loading="lazy"></div>
         </div>
       </div>
+    </section>
 
-      <div class="map-wrapper">
-        <iframe
-          src="https://www.google.com/maps?q=Profesor%20Rodolfo%20Lenz%20505%20Ñuñoa&output=embed"
-          width="100%"
-          height="300"
-          style="border:0;"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          allowfullscreen>
-        </iframe>
+    <section class="contact" id="contacto">
+      <div class="wrap contact-grid">
+        <div>
+          <p class="kicker">Contacto y ubicación</p>
+          <h2>Contacto</h2>
+          <div class="contact-row"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4zM4 7l8 6 8-6" stroke="currentColor" stroke-width="1.5"/></svg><div><a href="mailto:ignaciobravobustos@gmail.com">Escríbeme</a></div></div>
+          <div class="contact-row"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s6-5.4 6-11a6 6 0 1 0-12 0c0 5.6 6 11 6 11Z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="10" r="2" stroke="currentColor" stroke-width="1.5"/></svg><div><p>Profesor Rodolfo Lenz 505, Depto 55, Ñuñoa</p></div></div>
+          <div class="map"><iframe src="https://www.google.com/maps?q=Profesor%20Rodolfo%20Lenz%20505%20Ñuñoa&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación del Centro de Salud Mental Ñuñoa"></iframe></div>
+        </div>
+        <div class="gallery" aria-label="Espacios de atención">
+          <figure><img src="assets/img/sala-espera-consulta.png" alt="Sala de espera de la consulta" loading="lazy"></figure>
+          <figure><img src="assets/img/recibidor-espacio-terapia-psicologia.png" alt="Recibidor del espacio de terapia" loading="lazy"></figure>
+          <figure><img src="assets/img/box-atencion-pacientes.png" alt="Box de atención" loading="lazy"></figure>
+          <figure><img src="assets/img/recibidor-espacio-terapia-psicologia.png" alt="Espacio interior de la consulta" loading="lazy" style="object-position:72% center"></figure>
+        </div>
       </div>
+    </section>
+
+    <section class="topics" id="temas">
+      <div class="wrap topics-grid">
+        <div class="topics-copy">
+          <div class="topics-icon"><svg viewBox="0 0 40 40" fill="none"><path d="M20 34V16M20 18c-5-2-7-5-7-9 5 0 8 3 7 9Zm0 3c5-2 8-5 8-10-5 0-9 3-8 10Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          <div><p class="kicker">Temas de actualidad</p><h2>Reflexiones y recursos<br>para tu bienestar emocional.</h2></div>
+        </div>
+        <div class="topics-editorial" aria-hidden="true">Psicología · bienestar · reflexión</div>
+        <a class="topics-btn" href="temas.html">Ir al blog <span>→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-legal">
+      <a href="terminos.html">Términos y Condiciones</a>
+      <a href="politica.html">Política de Seguridad</a>
     </div>
-  </div>
-</section>
-
-<!-- BANNER CONSULTA -->
-<section class="consulta-banner">
-  <div class="consulta-banner-inner">
-    <div class="consulta-slider">
-
-      <div class="consulta-slide">
-        <img src="assets/img/consulta/recibidor-espacio-terapia-psicologia.png"
-             alt="Recibidor del espacio de terapia psicológica" />
-      </div>
-
-      <div class="consulta-slide">
-        <img src="assets/img/consulta/sala-espera-consulta.png"
-             alt="Sala de espera de la consulta psicológica" />
-      </div>
-
-      <div class="consulta-slide">
-        <img src="assets/img/consulta/box-atencion-pacientes.png"
-             alt="Box de atención a pacientes" />
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- TEMAS DE ACTUALIDAD -->
-<section id="temas" class="temas-section">
-  <div class="temas-inner">
-
-    <h2>Temas de Actualidad</h2>
-
-    <p class="temas-intro">
-      Artículos y contenido sobre salud mental, psicoterapia y bienestar organizacional.
-    </p>
-
-    <!-- Imagen CTA -->
-    <a href="temas.html" class="temas-cta">
-      <img
-        src="assets/img/temas.png"
-        alt="Temas de actualidad en psicología humanista"
-        loading="lazy"
-      />
-    </a>
-
-  </div>
-</section>
-
-
-</main>
-
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="footer-inner">
-    <a href="terminos.html">Términos y Condiciones</a>
-    <a href="politica.html">Política de Seguridad</a>
     <p class="footer-date">Enero 2026</p>
+  </footer>
+
+  <div class="site-footer-text">
+    <p>
+      Centro de salud mental en Ñuñoa. Psicoterapia Humanista, Gestalt y PNL.<br>
+      Ps. Mg. Ignacio Bravo - N° 98737 de Registro Nacional de Prestadores Individuales de Salud
+    </p>
   </div>
-</footer>
 
+  <a href="https://wa.me/56961560364" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.05-.371-.025-.52-.075-.149-.669-1.612-.916-.579-.242-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+  </a>
 
-<!-- TEXTO FINAL -->
-<div class="site-footer-text">
-  <p>Centro de salud mental en Ñuñoa. Psicoterapia Humanista, Gestalt y PNL.<br>
-  Ps. Mg. Ignacio Bravo - N° 98737 de Registro Nacional de Prestadores Individuales de Salud</p>
-</div>
-
-<!-- BOTÓN WHATSAPP -->
-<a
-  href="https://wa.me/56961560364"
-  class="whatsapp-btn"
-  target="_blank"
-  aria-label="Contactar por WhatsApp">
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-  </svg>
-</a>
-
-<script src="script.js"></script>
+  <script>
+    const menuBtn=document.querySelector('.menu-btn');
+    const nav=document.getElementById('mainNav');
+    menuBtn?.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',open);menuBtn.textContent=open?'×':'☰'});
+    nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuBtn?.setAttribute('aria-expanded','false');if(menuBtn)menuBtn.textContent='☰'}));
+  </script>
 </body>
 </html>
