@@ -36,4 +36,9 @@
     <priority>0.3</priority>
   </url>
 
+  <url>
+    <loc>https://psicologiahumanista.cl/registro.html</loc>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>

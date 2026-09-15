@@ -9,7 +9,9 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="stylesheet" href="style.css" />
@@ -20,29 +22,22 @@
 <!-- HEADER -->
 <header class="site-header">
   <div class="header-inner">
-
-    <!-- LOGO + TÍTULO (clickeable) -->
-    <a href="index.html" class="logo-section logo-link">
-      <img src="assets/img/logo.png" alt="Centro de Salud Mental Ñuñoa" class="logo" />
+    <a href="index.html" class="logo-section logo-link" aria-label="Psicología Humanista – Ignacio Bravo Bustos">
+      <img src="assets/img/logo.png" alt="Psicología Humanista" class="logo" />
       <div class="logo-text">
-        <div class="logo-title">
-          Centro de<br>
-          Salud Mental<br>
-          Ñuñoa
-        </div>
+        <div class="logo-title">Psicología Humanista<small>Ignacio Bravo Bustos</small></div>
       </div>
     </a>
-
-    <!-- NAVEGACIÓN -->
-    <nav class="main-nav">
-      <a href="index.html#acerca-de-mi">Acerca de mí</a>
-      <a href="index.html#empresas">Capacitación Empresa</a>
-      <a href="index.html#psicoterapia">Psicoterapia</a>
-      <a href="index.html#temas">Temas de Actualidad</a>
-      <a href="index.html#contacto">Contacto</a>
+    <button class="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Inicio</a>
+      <a href="registro.html">Regístrate</a>
+      <a href="index.html#psicoterapia">Enfoques</a>
+      <a href="index.html#temas">Temas</a>
+      <a href="index.html#contacto">Consulta</a>
+      <a href="index.html#empresas">Empresas</a>
       <a href="reserva.html" class="cta">Reserva tu hora</a>
     </nav>
-
   </div>
 </header>
 

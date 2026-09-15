@@ -86,3 +86,79 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Hacer showStep disponible globalmente para los botones "Volver" en el HTML
 window.showStep = showStep;
+
+
+// Menú móvil compartido para páginas internas (no interfiere con index.html)
+document.addEventListener('DOMContentLoaded', () => {
+  const menuBtn = document.querySelector('.site-header .menu-btn');
+  const nav = document.querySelector('.site-header .main-nav');
+  if (!menuBtn || !nav) return;
+
+  menuBtn.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.textContent = open ? '×' : '☰';
+  });
+
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.textContent = '☰';
+    });
+  });
+});
+
+
+// Home: despliegue editorial de “Acerca de mí”. No interfiere con el modal ni con el menú móvil.
+document.addEventListener('DOMContentLoaded', () => {
+  const trigger = document.querySelector('.about-hero-trigger');
+  const panel = document.getElementById('about-panel');
+  const close = document.querySelector('.about-close');
+  if (!trigger || !panel) return;
+
+  const setOpen = (open) => {
+    panel.classList.toggle('is-open', open);
+    panel.setAttribute('aria-hidden', String(!open));
+    trigger.setAttribute('aria-expanded', String(open));
+    trigger.querySelector('span')?.replaceChildren(document.createTextNode(open ? '↑' : '↓'));
+    if (open) {
+      window.setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 80);
+    }
+  };
+
+  trigger.addEventListener('click', () => setOpen(!panel.classList.contains('is-open')));
+  close?.addEventListener('click', () => setOpen(false));
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('registroForm');
+  if (!form) return;
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    console.info('Registro: formulario validado; requiere backend para persistir datos.');
+  });
+});
+
+
+// Home: menú móvil (mantiene aislado el comportamiento del Home).
+document.addEventListener('DOMContentLoaded', () => {
+  const menuBtn = document.querySelector('.home-header .menu-btn');
+  const nav = document.querySelector('.home-header .nav');
+  if (!menuBtn || !nav) return;
+
+  menuBtn.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.textContent = open ? '×' : '☰';
+  });
+
+  nav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.textContent = '☰';
+    });
+  });
+});

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regístrate – Centro de Salud Mental Ñuñoa</title>
+  <meta name="description" content="Regístrate para acceder a contenidos y novedades de Psicología Humanista.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo-section logo-link" aria-label="Psicología Humanista – Ignacio Bravo Bustos">
+      <img src="assets/img/logo.png" alt="Psicología Humanista" class="logo" />
+      <div class="logo-text">
+        <div class="logo-title">Psicología Humanista<small>Ignacio Bravo Bustos</small></div>
+      </div>
+    </a>
+    <button class="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Inicio</a>
+      <a href="registro.html">Regístrate</a>
+      <a href="index.html#psicoterapia">Enfoques</a>
+      <a href="index.html#temas">Temas</a>
+      <a href="index.html#contacto">Consulta</a>
+      <a href="index.html#empresas">Empresas</a>
+      <a href="reserva.html" class="cta">Reserva tu hora</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="registro-page">
+    <div class="registro-inner">
+      <p class="kicker">Acceso</p>
+      <h1>Regístrate</h1>
+      <p class="registro-intro">Crea tu registro para mantenerte al tanto de información, novedades y futuras actividades.</p>
+      <form class="registro-form" id="registroForm">
+        <div class="form-group">
+          <label for="registroNombre">Nombre</label>
+          <input type="text" id="registroNombre" name="nombre" autocomplete="given-name" required>
+        </div>
+        <div class="form-group">
+          <label for="registroCorreo">Correo electrónico</label>
+          <input type="email" id="registroCorreo" name="correo" autocomplete="email" required>
+        </div>
+        <div class="registro-checks">
+          <label class="registro-check"><input type="checkbox" required> <span>Acepto los <a href="terminos.html">Términos y Condiciones</a>.</span></label>
+          <label class="registro-check"><input type="checkbox" required> <span>He leído la <a href="politica.html">Política de Seguridad</a>.</span></label>
+          <label class="registro-check"><input type="checkbox"> <span>Deseo recibir información, novedades, charlas y eventualmente invitaciones a eventos.</span></label>
+        </div>
+        <button class="registro-submit" type="submit">Crear registro <span>→</span></button>
+        <p class="registro-note">El consentimiento para recibir comunicaciones es opcional y puede gestionarse de forma independiente.</p>
+      </form>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="footer-legal">
+    <a href="terminos.html">Términos y Condiciones</a>
+    <a href="politica.html">Política de Seguridad</a>
+  </div>
+  <p class="footer-date">Enero 2026</p>
+</footer>
+<div class="site-footer-text"><p>Centro de salud mental en Ñuñoa. Psicoterapia Humanista, Gestalt y PNL.<br>Ps. Mg. Ignacio Bravo - N° 98737 de Registro Nacional de Prestadores Individuales de Salud</p></div>
+<a href="https://wa.me/56961560364" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">💬</a>
+<script src="script.js"></script>
+</body>
+</html>
