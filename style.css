@@ -1710,7 +1710,15 @@ body:not(.home) .temas-index > h1 { width: min(var(--master-max), calc(100% - 80
 body:not(.home) .temas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px 26px; }
 body:not(.home) .tema-item { background: transparent; border: 0; box-shadow: none; }
 body:not(.home) .tema-item a { display: block; text-decoration: none; }
-body:not(.home) .tema-item img { width: 100%; aspect-ratio: 1.45; object-fit: cover; border-radius: 2px; transition: transform .35s ease, filter .35s ease; }
+body:not(.home) .tema-item img {
+  width: 100%;
+  aspect-ratio: 372 / 275;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 2px;
+  transition: transform .35s ease, filter .35s ease;
+}
 body:not(.home) .tema-item:hover img { transform: translateY(-4px); filter: brightness(1.03); }
 body:not(.home) .tema-item span { display: block; margin-top: 13px; color: var(--master-ink); font-family: var(--master-serif); font-size: 24px; line-height: 1.05; }
 
